@@ -1,0 +1,16 @@
+name: Kits
+version: ${project.version}
+main: me.mazenz.kits.Kits
+api-version: 1.17
+authors: [ GKasparov ]
+description: Customised server kits
+commands:
+  kits:
+    description: lists all kits
+  kit:
+    description: equips an available kit
+    permission: kits.kit
+permissions:
+  kits.kit:
+    description: allows players to use /kit
+    default: op
