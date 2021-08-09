@@ -43,5 +43,6 @@ public final class Kits extends JavaPlugin {
                 }
             }
         }
+        System.out.println("[Kits] Permissions loaded");
     }
 }

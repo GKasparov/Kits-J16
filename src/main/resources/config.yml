@@ -16,3 +16,4 @@ kits:
       - IRON_SWORD;1
       - APPLE;1
     description: Items for swordsmen #Ensure you set a valid description, even if empty, for each kit
+#KIT PERMISSIONS WILL BE ADDED BASED ON THE NAMES OF EACH KIT
