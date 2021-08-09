@@ -11,7 +11,7 @@ kits:
       - BOW;1
       - ARROW;2
     description: Items for archers #Ensure you set a valid description, even if empty, for each kit
-  SwordMan:
+  SwordsMan:
     items:
       - IRON_SWORD;1
       - APPLE;1

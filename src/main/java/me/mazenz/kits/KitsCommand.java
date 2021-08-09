@@ -20,10 +20,10 @@ public class KitsCommand implements CommandExecutor {
         if (sender instanceof Player) {
             sender.sendMessage(ChatColor.YELLOW + "====================");
             sender.sendMessage(ChatColor.YELLOW + "List of available kits:");
-            for (String name : kits.getConfig().getConfigurationSection("kits").getKeys(false)) {
+            for (String name : Objects.requireNonNull(kits.getConfig().getConfigurationSection("kits")).getKeys(false)) {
                 sender.sendMessage(ChatColor.BOLD + "" +
                         ChatColor.valueOf(kits.getConfig().getString("kitsListColor")) +
-                        name + ChatColor.WHITE + ":" + ChatColor.RESET + "" +
+                        name + ChatColor.WHITE + ": " + ChatColor.RESET + "" +
                         ChatColor.valueOf(kits.getConfig().getString("kitsListColor")) +
                         Objects.requireNonNull(kits.getConfig().getConfigurationSection("kits." + name)).getString("description"));
             }

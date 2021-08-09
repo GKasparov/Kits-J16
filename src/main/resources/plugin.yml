@@ -10,7 +10,3 @@ commands:
   kit:
     description: equips an available kit
     permission: kits.kit
-permissions:
-  kits.kit:
-    description: allows players to use /kit
-    default: op
