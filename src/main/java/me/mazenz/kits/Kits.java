@@ -1,7 +1,6 @@
 package me.mazenz.kits;
 
 import org.bukkit.plugin.java.JavaPlugin;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
