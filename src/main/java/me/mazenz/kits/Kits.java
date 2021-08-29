@@ -25,20 +25,20 @@ public final class Kits extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        System.out.println("Kits+ Shutting Down");
+        System.out.println("Kits Stopping");
     }
 
     public void genPerms() throws IOException {
-        try (FileWriter genPerms = new FileWriter("./permissions.yml")) {
+        try (FileWriter permissions = new FileWriter("./permissions.yml")) {
             for (String kitName : Objects.requireNonNull(getConfig().getConfigurationSection("kits")).getKeys(false)) {
                 String permissionsContent = Files.readString(Path.of("./permissions.yml"), StandardCharsets.UTF_8);
 
                 if (!permissionsContent.contains(kitName)) {
-                    genPerms.write(System.getProperty("line.separator"));
-                    genPerms.write("kits.kit." + kitName + ":");
-                    genPerms.write(System.getProperty("line.separator"));
-                    genPerms.write("       default: op");
-                    genPerms.write(System.getProperty("line.separator"));
+                    permissions.write(System.getProperty("line.separator"));
+                    permissions.write("kits.kit." + kitName + ":");
+                    permissions.write(System.getProperty("line.separator"));
+                    permissions.write("       default: op");
+                    permissions.write(System.getProperty("line.separator"));
                 }
             }
         }
