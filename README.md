@@ -1,5 +1,6 @@
 # SaulKits
-Kits plugin for servers on Java 16. Config is self explanatory.
+Kits plugin for better servers.
+Spigot page: https://www.spigotmc.org/resources/saulkits.88036/
 
 # Permissions
 The plugin generates permissions per kit in the format. ``kits.kit.[KitName]``
