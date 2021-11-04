@@ -34,6 +34,7 @@ public class KitCommand implements CommandExecutor {
         Player player = (Player) sender;
 
         if (args.length < 1 || args.length > 2) {
+            sender.sendMessage(ChatColor.RED + "Invalid arguments. Correct Syntax: /kit <KitName> [confirm]");
             return true;
         }
 
@@ -73,8 +74,7 @@ public class KitCommand implements CommandExecutor {
         }
 
         if (vaultEnabled && !(args[1].equalsIgnoreCase("confirm"))) {
-
-            sender.sendMessage(ChatColor.RED + "Invalid Syntax");
+            sender.sendMessage(ChatColor.RED + "Invalid Syntax. Correct Syntax: /kit <KitName> [confirm]");
             return true;
         }
 
