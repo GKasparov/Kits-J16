@@ -1,4 +1,4 @@
-# Kits-J16
+# SaulKits
 Kits plugin for servers on Java 16. Config is self explanatory.
 
 # Permissions
