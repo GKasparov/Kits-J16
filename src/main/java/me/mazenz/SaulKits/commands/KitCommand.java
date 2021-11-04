@@ -1,6 +1,6 @@
-package me.mazenz.kits.commands;
+package me.mazenz.SaulKits.commands;
 
-import me.mazenz.kits.Kits;
+import me.mazenz.SaulKits.Kits;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -10,8 +10,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+
 import java.util.Objects;
-import static org.bukkit.Sound.*;
+
+import static org.bukkit.Sound.BLOCK_ANVIL_PLACE;
 
 public class KitCommand implements CommandExecutor {
     private final Kits plugin;
@@ -59,11 +61,15 @@ public class KitCommand implements CommandExecutor {
             }
         }
 
-        if (kitName.isEmpty()) { return true; }
+        if (kitName.isEmpty()) {
+            return true;
+        }
 
         if (vaultEnabled && args.length < 2) {
-                sender.sendMessage(new String[]{"Kit " + kitName + " costs $" + price + " Do you wish to complete this purchase? []", "To confirm type /kit " + kitName + " confirm"});
-                return true;
+            sender.sendMessage("Kit " + ChatColor.GREEN + kitName + ChatColor.WHITE + " costs $" +
+                            ChatColor.GREEN + price + ChatColor.WHITE + " Do you wish to complete this purchase?",
+                    "To confirm type /kit " + ChatColor.GREEN + kitName + ChatColor.WHITE + " confirm");
+            return true;
         }
 
         if (vaultEnabled && !(args[1].equalsIgnoreCase("confirm"))) {

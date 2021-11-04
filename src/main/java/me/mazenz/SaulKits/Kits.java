@@ -1,7 +1,7 @@
-package me.mazenz.kits;
+package me.mazenz.SaulKits;
 
-import me.mazenz.kits.commands.KitCommand;
-import me.mazenz.kits.commands.KitsCommand;
+import me.mazenz.SaulKits.commands.KitCommand;
+import me.mazenz.SaulKits.commands.KitsCommand;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -25,6 +25,15 @@ public final class Kits extends JavaPlugin {
             getConfig().options().copyDefaults(true);
             saveConfig();
             genPerms();
+
+            new UpdateChecker(this, 88036).getVersion(version -> {
+                log.info("Checking for Updates...");
+                if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
+                    log.info("No new version available");
+                } else {
+                    log.info("There is a new version of SaulKits. https://www.spigotmc.org/resources/saulkits.88036/");
+                }
+            });
 
             if (getConfig().getBoolean("vaultEnabled")) {
                 if (!setupEconomy()) {

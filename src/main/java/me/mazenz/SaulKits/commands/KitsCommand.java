@@ -1,6 +1,6 @@
-package me.mazenz.kits.commands;
+package me.mazenz.SaulKits.commands;
 
-import me.mazenz.kits.Kits;
+import me.mazenz.SaulKits.Kits;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

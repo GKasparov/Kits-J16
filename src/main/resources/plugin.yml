@@ -1,6 +1,6 @@
 name: SaulKits
 version: 1.2
-main: me.mazenz.kits.Kits
+main: me.mazenz.SaulKits.Kits
 api-version: 1.17
 authors: [ GKasparov ]
 softdepend:
