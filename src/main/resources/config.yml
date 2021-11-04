@@ -4,14 +4,18 @@ kitsListColor: WHITE #Color of the kits list. Ensure you use valid Bukkit ChatCo
 #Create Kits here following the same structure as the 2 example kits. #In the "items" areas, ensure you put a semicolon and the amount you want of that given after each item name.
 #For example, APPLE;3 . Furthermore, ensure you keep the same hierarchy in the configs. All Kit names should line up, the "items" words should line up, etc. The item names must be
 #all caps. Item names can be found at https://www.digminecraft.com/lists/item_id_list_pc_1_12.php. Ensure you use the name not the IDs
+
+vaultEnabled: true # Whether or not economy is added
 kits:
   Archer:
+    price: 100
     items:
       - GOLDEN_APPLE;1
       - BOW;1
       - ARROW;2
     description: Items for archers #Ensure you set a valid description, even if empty, for each kit
   SwordsMan:
+    price: 100
     items:
       - IRON_SWORD;1
       - APPLE;1

@@ -1,7 +1,8 @@
 package me.mazenz.kits;
 
+import me.mazenz.kits.commands.KitCommand;
+import me.mazenz.kits.commands.KitsCommand;
 import net.milkbowl.vault.economy.Economy;
-import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.FileWriter;
@@ -24,7 +25,7 @@ public final class Kits extends JavaPlugin {
             saveConfig();
             genPerms();
             Objects.requireNonNull(getCommand("kits")).setExecutor(new KitsCommand(this));
-            Objects.requireNonNull(getCommand("kit")).setExecutor(new KitCommand(this));
+            Objects.requireNonNull(getCommand("kit")).setExecutor(new KitCommand(this, econ));
 
             if (getConfig().getBoolean("vaultEnabled")) {
                 if (!setupEconomy()) {
