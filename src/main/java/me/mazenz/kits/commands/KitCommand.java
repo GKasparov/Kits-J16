@@ -61,12 +61,13 @@ public class KitCommand implements CommandExecutor {
 
         if (kitName.isEmpty()) { return true; }
 
-        if (args.length != 2 && vaultEnabled) {
-            sender.sendMessage(new String[] {"Kit " + kitName + " costs $" + price + " Do you wish to complete this purchase? []", "To confirm type /kit " + kitName + " confirm"});
-            return true;
+        if (vaultEnabled && args.length < 2) {
+                sender.sendMessage(new String[]{"Kit " + kitName + " costs $" + price + " Do you wish to complete this purchase? []", "To confirm type /kit " + kitName + " confirm"});
+                return true;
         }
 
-        if (args[1] != "confirm" && vaultEnabled) {
+        if (vaultEnabled && !(args[1].equalsIgnoreCase("confirm"))) {
+
             sender.sendMessage(ChatColor.RED + "Invalid Syntax");
             return true;
         }
@@ -90,6 +91,7 @@ public class KitCommand implements CommandExecutor {
         }
 
         if (vaultEnabled) {
+            econ.withdrawPlayer(player, price);
             sender.sendMessage(ChatColor.WHITE + "You have purchased kit " + ChatColor.GREEN + kitName + ChatColor.WHITE + " for " + ChatColor.GREEN + "$" + price);
             return true;
         }

@@ -1,12 +1,14 @@
-name: Kits
-version: ${project.version}
+name: SaulKits
+version: 1.2
 main: me.mazenz.kits.Kits
 api-version: 1.17
 authors: [ GKasparov ]
+softdepend:
+  - Vault
 description: Customised server kits
 commands:
   kits:
     description: lists all kits
   kit:
     description: equips an available kit
-    permission: kits.kit
+    permission: kits.kit.*
